@@ -1,3 +1,6 @@
+Die App ist deployed unter: webtech-front.vercel.app
+
+
 # Startseite
 
 Auf der Startseite befindet sich ein Eingabefeld, mit dem Datenbankeinträge erstellt werden können. Es werden automatisch eine ID und das aktuelle Datum übergeben.
