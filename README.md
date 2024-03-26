@@ -1,4 +1,4 @@
-# Tagebuch-App
+# Tagebuch-Seite
 
 Diese Website ermöglicht es Benutzern, Tagebucheinträge zu erstellen und zu verwalten. Außerdem kann ein Profil erstellt werden. Die App ist unter folgender Adresse deployed: [webtech-front.vercel.app](https://webtech-front.vercel.app)
 
