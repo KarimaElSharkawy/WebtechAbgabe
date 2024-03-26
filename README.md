@@ -2,6 +2,22 @@
 
 Diese Website ermöglicht es Benutzern, Tagebucheinträge zu erstellen und zu verwalten. Außerdem kann ein Profil erstellt werden. Die App ist unter folgender Adresse deployed: [webtech-front.vercel.app](https://webtech-front.vercel.app)
 
+## Inhaltsverzeichnis
+
+- [Startseite](#startseite)
+  - [Erstellen](#erstellen)
+- [Meine Einträge](#meine-einträge)
+  - [Lesen](#lesen)
+  - [Aktualisieren](#aktualisieren)
+  - [Löschen](#löschen)
+- [Profil](#profil)
+- [Installation und Nutzung](#installation-und-nutzung)
+  - [Klonen des Repositories](#klonen-des-repositories)
+  - [Einrichtung und Start des Backend-Servers](#einrichtung-und-start-des-backend-servers)
+  - [Einrichtung und Start der Frontend-Anwendung](#einrichtung-und-start-der-frontend-anwendung)
+- [Verwendete Technologien](#verwendete-technologien)
+- [Deployment](#deployment)
+
 ## Startseite
 
 Auf der Startseite befindet sich ein Eingabefeld, mit dem Datenbankeinträge erstellt werden können. Automatisch werden eine ID und das aktuelle Datum hinzugefügt.
