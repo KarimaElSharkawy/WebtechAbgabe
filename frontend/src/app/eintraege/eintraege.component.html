@@ -1,30 +1,47 @@
+<<<<<<< Updated upstream
 <div class="container rounded ">
   <div *ngIf="editingEntry" class="mb-3">
     <textarea [(ngModel)]="editText" class="form-control" style="height: 200px; margin-bottom: 20px;" ></textarea>
+=======
+<div class="container rounded" [ngClass]="{'high-contrast': highContrast}">
+  <div *ngIf="editingEntry" class="mb-3">
+    <textarea [(ngModel)]="editText" class="form-control" style="height: 200px; margin-bottom: 20px;" [ngStyle]="{'font-size.px': fontSize}"></textarea>
+>>>>>>> Stashed changes
     <button type="button" class="btn btn-success" (click)="updateEntry()">Speichern</button>
   </div>
 
-  <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+  <div class="jumbotron p-3 p-md-5 rounded" [ngClass]="{'bg-dark': !highContrast, 'bg-light text-dark': highContrast}" [ngStyle]="{'font-size.px': fontSize}">
     <div class="col-md-12 px-0">
+<<<<<<< Updated upstream
       <h1 class="display-4 ">Meine Einträge</h1>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource.length > 0; else noEntries">
+=======
+      <h2 class="display-4">Meine Einträge</h2>
+>>>>>>> Stashed changes
 
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource.length > 0; else noEntries">
+        
         <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          <th mat-header-cell *matHeaderCellDef [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize}"> ID </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize, 'line-height': lineHeight}"> {{element.id}} </td>
         </ng-container>
 
         <ng-container matColumnDef="eintraege">
-          <th mat-header-cell *matHeaderCellDef> Eintrag </th>
-          <td mat-cell *matCellDef="let element"> {{element.eintraege}} </td>
+          <th mat-header-cell *matHeaderCellDef [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize}"> Eintrag </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize, 'line-height': lineHeight}">
+            {{element.eintraege}}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="datum">
-          <th mat-header-cell *matHeaderCellDef> Datum </th>
-          <td mat-cell *matCellDef="let element"> {{element.datum | date:'mediumDate'}} </td>
+          <th mat-header-cell *matHeaderCellDef [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize}"> Datum </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize, 'line-height': lineHeight}">
+            {{element.datum | date:'mediumDate'}}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="edit">
+<<<<<<< Updated upstream
           <th mat-header-cell *matHeaderCellDef> Bearbeiten </th>
           <td mat-cell *matCellDef="let element">
 
@@ -32,22 +49,37 @@
               <mat-icon>edit</mat-icon>
             </button>
           
+=======
+          <th mat-header-cell *matHeaderCellDef [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize}"> Bearbeiten </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="{'high-contrast': highContrast}">
+            <button mat-icon-button (click)="startEdit(element)" style="border: none; background: none;">
+              <mat-icon [ngStyle]="{'font-size.px': fontSize}">edit</mat-icon>
+            </button>
+>>>>>>> Stashed changes
           </td>
         </ng-container>
         
         <ng-container matColumnDef="delete">
+<<<<<<< Updated upstream
           <th mat-header-cell *matHeaderCellDef> Löschen </th>
           <td mat-cell *matCellDef="let element">
             <button mat-icon-button (click)="deleteEntry(element.id)"style="border: none; background: none;">
               <mat-icon>delete</mat-icon>
             </button>          
+=======
+          <th mat-header-cell *matHeaderCellDef [ngClass]="{'high-contrast': highContrast}" [ngStyle]="{'font-size.px': fontSize}"> Löschen </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="{'high-contrast': highContrast}">
+            <button mat-icon-button (click)="deleteEntry(element.id)" style="border: none; background: none;">
+              <mat-icon [ngStyle]="{'font-size.px': fontSize}">delete</mat-icon>
+            </button>
+>>>>>>> Stashed changes
           </td>
         </ng-container>
         
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      
+
       <ng-template #noEntries>
         <div class="alert alert-info" role="alert">
           Noch keine Einträge vorhanden.

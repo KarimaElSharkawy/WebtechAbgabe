@@ -1,5 +1,6 @@
 .container {
   max-width: 90%;
+<<<<<<< Updated upstream
   background-color: #343a40;
   padding-top: 1%;
   padding-left: 1%;
@@ -42,3 +43,41 @@
 }
 
 
+=======
+}
+
+.jumbotron {
+  background-color: #343a40;
+  color: white;
+}
+
+.high-contrast .container {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+.high-contrast .jumbotron {
+  background-color: #000000 !important; 
+  color: #FFFF00 !important;
+}
+
+
+
+.high-contrast th {
+  background-color: #000000 !important; 
+  color: #FFFF00 !important;
+  border-bottom: 1px solid #FFFF00 !important; 
+}
+
+.high-contrast td {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border-bottom: 1px solid #FFFF00 !important; 
+}
+
+
+
+.high-contrast mat-icon {
+  color: #FFFF00 !important; 
+}
+>>>>>>> Stashed changes
