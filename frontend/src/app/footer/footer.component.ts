@@ -1,17 +1,4 @@
 import { Component } from '@angular/core';
-<<<<<<< Updated upstream
-
-@Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
-})
-export class FooterComponent {
-
-}
-=======
 import { CommonModule } from '@angular/common'; 
 import { ContrastService } from '../shared/contrast.service'; 
 
@@ -33,4 +20,3 @@ export class FooterComponent {
     });
   }
 }
->>>>>>> Stashed changes

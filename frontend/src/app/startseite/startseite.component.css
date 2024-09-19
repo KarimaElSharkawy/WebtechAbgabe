@@ -8,15 +8,9 @@
   color: #FFFF00 !important;
 }
 
-<<<<<<< Updated upstream
-.blog-header-logo {
-  font-family: "Playfair Display", serif;
-  font-size: 2.25rem;
-=======
 .high-contrast .bg-light {
   background-color: #000000 !important;
   color: #FFFF00 !important;
->>>>>>> Stashed changes
 }
 
 .high-contrast a {
@@ -28,19 +22,3 @@
   color: #000000 !important;
   border-color: #FFFF00 !important;
 }
-<<<<<<< Updated upstream
-
-.form-group textarea {
-  height: 200px;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.abstand{
-  height: 10%;
-}
-=======
->>>>>>> Stashed changes

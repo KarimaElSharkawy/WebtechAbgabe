@@ -8,9 +8,6 @@ import { EintraegeComponent } from './eintraege/eintraege.component';
 import { NavComponent } from './nav/nav.component';
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-<<<<<<< Updated upstream
-import { FooterComponent } from './footer/footer.component';
-=======
 import { MatIcon } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -18,18 +15,12 @@ import { FontSizeService } from './shared/font-size.service';
 import { MatIconModule } from '@angular/material/icon';
 import { ContrastService } from './shared/contrast.service';
 
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-root',
   standalone: true,
-<<<<<<< Updated upstream
-  imports: [RouterOutlet, StartseiteComponent, ProfielComponent, MatFormFieldModule, MatInputModule, 
-    MatSelectModule, EintraegeComponent, NavComponent, MatSnackBarModule,FooterComponent],
-=======
   imports: [RouterOutlet, StartseiteComponent, MatFormFieldModule, MatInputModule, MatIcon,
     MatSelectModule, EintraegeComponent, NavComponent, MatSnackBarModule, FooterComponent, FormsModule, CommonModule],
->>>>>>> Stashed changes
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] 
 })

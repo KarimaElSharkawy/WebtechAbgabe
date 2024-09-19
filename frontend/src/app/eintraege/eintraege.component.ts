@@ -5,11 +5,8 @@ import { Eintraege } from '../shared/eintraege';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
-<<<<<<< Updated upstream
-=======
 import { FontSizeService } from '../shared/font-size.service';
 import { ContrastService } from '../shared/contrast.service';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-eintraege',
