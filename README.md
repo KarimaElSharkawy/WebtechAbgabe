@@ -1,6 +1,7 @@
 
 
 # WebTech Accessibility Projekt
+- [Dokumentation](https://docs.google.com/document/d/1w_7wqp_GJv40DShD1_Dy1ZtnE2pDHwQFnOTslEk6Rmw/edit?usp=sharing)
 
 ## Inhaltsverzeichnis
 
