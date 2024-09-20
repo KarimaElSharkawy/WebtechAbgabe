@@ -91,6 +91,7 @@ Im Projekt wurden folgende Technologien und Werkzeuge verwendet:
 ```
 **Beschreibung**: Um sicherzustellen, dass die Inhalte in einer sinnvollen Reihenfolge durchlaufen werden, wurde `tabindex` verwendet. Dies gewährleistet eine logische und barrierefreie Reihenfolge der interaktiven Elemente.
 
+
 ### 1.4.3 Contrast (Minimum)
 
 **Codebeispiel:**
@@ -152,13 +153,20 @@ body.large-text {
 
 ## Implementierung der Zugänglichkeitsfeatures
 
+
 ### Semantisches Markup
 
 **Beschreibung**: Es wurden semantische HTML-Tags wie `<header>`, `<nav>`, `<main>`, und `<footer>` verwendet, um die Struktur der Seiteninhalte zu verdeutlichen und sie für assistive Technologien besser zugänglich zu machen.
 
+![Bildschirmfoto 2024-09-20 um 00 02 35](https://github.com/user-attachments/assets/db0ed3ad-57a5-408d-878c-fb59c994af4e)
+
+
 ### Tastaturbedienbarkeit
 
 **Beschreibung**: Alle interaktiven Elemente können per Tab-Taste erreicht werden. Die Navigationsreihenfolge wurde durch `tabindex` gesteuert, um eine sinnvolle Abfolge sicherzustellen.
+
+![Bildschirmfoto 2024-09-20 um 00 11 31](https://github.com/user-attachments/assets/0b2a1026-0e3d-4b5b-89c7-7156c606e3d1)
+
 
 ### Sprachangabe im Dokument
 
@@ -168,6 +176,9 @@ body.large-text {
 ```
 Dies hilft Screenreadern, die richtige Sprache für die Inhalte zu verwenden.
 
+![Bildschirmfoto 2024-09-20 um 00 00 02](https://github.com/user-attachments/assets/9676df4d-1f0e-4c72-8251-be063b71dcfc)
+
+
 ### Fokus-Ring
 
 **Beschreibung**: Ein Fokus-Ring wurde für alle interaktiven Elemente implementiert, um den aktuellen Fokus für Tastaturnutzer visuell hervorzuheben:
@@ -176,6 +187,9 @@ button:focus, a:focus {
   outline: 2px solid #00FFFF;
 }
 ```
+![Bildschirmfoto 2024-09-20 um 00 04 33](https://github.com/user-attachments/assets/b57025bf-d67e-4ec2-a36a-068aedf7cf4a)
+![Bildschirmfoto 2024-09-20 um 00 04 57](https://github.com/user-attachments/assets/99fe7462-a002-419c-9687-a2577841a394)
+
 
 ### Skip-Link
 
@@ -183,6 +197,8 @@ button:focus, a:focus {
 ```html
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 ```
+![Bildschirmfoto 2024-09-20 um 00 08 07](https://github.com/user-attachments/assets/b7cd0749-afb0-4472-8348-410bc743e7b6)
+
 
 ## Präsentation und Diskussion
 
