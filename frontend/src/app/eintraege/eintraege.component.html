@@ -6,11 +6,11 @@
 
 <div class="container rounded" [ngClass]="{'high-contrast': highContrast}">
   <div *ngIf="editingEntry" class="mb-3">
-    <!-- Eingabefeld mit Label und Fehlerbehandlung -->
+
     <label for="editText" aria-label="Bearbeite deinen Eintrag">Bearbeite deinen Eintrag:</label>
     <textarea id="editText" [(ngModel)]="editText" class="form-control" style="height: 200px; margin-bottom: 20px;" [ngStyle]="{'font-size.px': fontSize}" aria-required="true"></textarea>
 
-    <!-- Fehlerhinweis bei leerem Eingabefeld -->
+
     <div *ngIf="editError" class="text-danger" aria-live="polite">
       Das Bearbeitungsfeld darf nicht leer sein.
     </div>
