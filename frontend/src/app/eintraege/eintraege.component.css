@@ -1,10 +1,32 @@
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+button:focus, a:focus {
+  outline: 2px solid #00FFFF;
+  outline-offset: 2px;
+}
+
 .container {
   max-width: 90%;
+  background-color: #f8f9fa;
+  color: #343a40;
 }
 
 .jumbotron {
   background-color: #343a40;
-  color: white;
+  color: white; /* Sicherstellen des Kontrasts */
 }
 
 .high-contrast .container {
@@ -13,26 +35,31 @@
 }
 
 .high-contrast .jumbotron {
-  background-color: #000000 !important; 
+  background-color: #000000 !important;
   color: #FFFF00 !important;
 }
 
-
-
 .high-contrast th {
-  background-color: #000000 !important; 
+  background-color: #000000 !important;
   color: #FFFF00 !important;
-  border-bottom: 1px solid #FFFF00 !important; 
+  border-bottom: 1px solid #FFFF00 !important;
 }
 
 .high-contrast td {
   background-color: #000000 !important;
   color: #FFFF00 !important;
-  border-bottom: 1px solid #FFFF00 !important; 
+  border-bottom: 1px solid #FFFF00 !important;
 }
 
-
-
 .high-contrast mat-icon {
-  color: #FFFF00 !important; 
+  color: #FFFF00 !important;
+}
+
+/* Dynamische Textgrößenregelung */
+.container {
+  font-size: 100%;
+}
+
+.container.large-text {
+  font-size: 200%;
 }

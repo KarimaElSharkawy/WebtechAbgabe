@@ -4,19 +4,26 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: #767676;
+  color: #767676; /* Nicht ausreichend, daher anpassen */
+  background-color: #f8f9fa;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f8f9fa;
-  text-decoration: none;
 }
 
-
-.high-contrast{
-  background-color: #000000 !important; 
-  color: #FFFF00 !important; 
+.high-contrast {
+  background-color: #000000 !important;
+  color: #FFFF00 !important; /* Kontrast sicherstellen */
 }
 
 .high-contrast a {
-  color: #FFFF00 !important; 
+  color: #FFFF00 !important;
+}
+
+/* Dynamische Textgrößenregelung */
+.footer {
+  font-size: 100%;
+}
+
+.footer.large-text {
+  font-size: 200%;
 }

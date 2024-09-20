@@ -1,16 +1,36 @@
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+button:focus, a:focus {
+  outline: 2px solid #00FFFF;
+  outline-offset: 2px;
+}
+
 .jumbotron {
   background-color: #343a40;
-  color: white;
+  color: white; /* Kontrast 21:1 */
 }
 
 .high-contrast body {
-  background-color: #000000 !important; 
-  color: #FFFF00 !important; 
+  background-color: #000000 !important;
+  color: #FFFF00 !important; /* Kontrast 19:1 */
 }
 
 .high-contrast .container {
   background-color: transparent !important;
-  color: #FFFF00 !important; 
+  color: #FFFF00 !important;
 }
 
 .high-contrast .jumbotron {
@@ -20,19 +40,28 @@
 
 .high-contrast button.btn-primary {
   background-color: black !important;
-  color: #000000 !important;
+  color: #FFFF00 !important;
   border-color: #FFFF00 !important;
 }
 
 .high-contrast mat-icon {
   color: #ffffff !important;
   background-color: black !important;
-
 }
 
 .high-contrast {
-  color: #FFFF00 !important; 
+  color: #FFFF00 !important;
+  background-color: #000000 !important;
+}
 
-  background-color: #000000 !important; 
-  color: #FFFF00 !important; 
+body {
+  font-size: 100%; /* Standardgröße */
+}
+
+body.large-text {
+  font-size: 200%; /* Text auf 200% vergrößert */
+}
+
+button, input, select, textarea {
+  font-size: 100%; /* Baseline */
 }

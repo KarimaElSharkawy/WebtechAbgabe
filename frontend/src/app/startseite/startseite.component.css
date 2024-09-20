@@ -1,6 +1,6 @@
 .jumbotron {
-  background-color: #000000; /* High contrast black background */
-  color: #FFFFFF; /* High contrast white text */
+  background-color: #000000;
+  color: #FFFFFF; /* Kontrast 21:1 */
 }
 
 .high-contrast .bg-dark {
@@ -21,4 +21,18 @@
   background-color: #FFFF00 !important;
   color: #000000 !important;
   border-color: #FFFF00 !important;
+}
+
+button:focus, a:focus {
+  outline: 2px solid #00FFFF;
+  outline-offset: 2px;
+}
+
+/* Dynamische Textgrößenregelung */
+.jumbotron {
+  font-size: 100%;
+}
+
+.jumbotron.large-text {
+  font-size: 200%;
 }

@@ -16,7 +16,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { FontSizeService } from '../shared/font-size.service'; 
 import { ContrastService } from '../shared/contrast.service';
 
-
 @Component({
   selector: 'app-startseite',
   templateUrl: './startseite.component.html',
@@ -34,7 +33,6 @@ import { ContrastService } from '../shared/contrast.service';
     FormsModule,
     CommonModule,
     MatSnackBarModule,
-    
   ]
 })
 export class StartseiteComponent {
@@ -43,8 +41,7 @@ export class StartseiteComponent {
   fontSize = 16;
   lineHeight = 1.5; 
   highContrast = false;
-
-
+  entryError: boolean = false;  // Fehlerindikator
 
   constructor(private backendService: BackendService, private snackBar: MatSnackBar, public fontSizeService: FontSizeService, public contrastService: ContrastService) {}
 
@@ -58,15 +55,15 @@ export class StartseiteComponent {
             duration: 3000,
           });
           this.eintragText = ''; 
+          this.entryError = false;  // Fehler zurücksetzen
         },
-        
         error: (err) => console.error('Fehler beim Hinzufügen des Eintrags:', err),
       });
     } else {
+      this.entryError = true;  // Fehler setzen, wenn Eingabe leer ist
       console.log('Eintrag ist leer. Nichts zu speichern.');
     }
   }
-
 
   ngOnInit(): void {
     this.fontSizeService.fontSize$.subscribe(size => {
@@ -78,8 +75,7 @@ export class StartseiteComponent {
     });
   }
 
-
-   toggleFontSizeControl(): void {
+  toggleFontSizeControl(): void {
     this.showFontSizeControl = !this.showFontSizeControl;
   }
 

@@ -3,25 +3,24 @@
 }
 
 .high-contrast .contrast-container {
-  background-color: #000000 !important; 
+  background-color: #000000 !important;
 }
 
 .high-contrast .blog-header-logo {
-  color: #000000 !important; 
-
+  color: #000000 !important;
 }
 
 .high-contrast .nav-scroller {
-  background-color: #000000 !important; 
-  box-shadow: none; 
+  background-color: #000000 !important;
+  box-shadow: none;
 }
 
 .high-contrast .nav a {
-  color: #FFFF00 !important; 
+  color: #FFFF00 !important; /* Sicherstellen des Kontrasts */
 }
 
 .high-contrast .nav a.router-link-active {
-  color: #00FFFF !important; 
+  color: #00FFFF !important;
 }
 
 .high-contrast button.btn-primary {
@@ -29,14 +28,29 @@
   color: #000000 !important;
   border-color: #FFFF00 !important;
 }
+
 .blog-header {
   text-align: center;
 }
 
 .nav {
-  justify-content: center !important; 
+  justify-content: center !important;
 }
 
 .nav a {
-  margin: 0 200px; 
+  margin: 0 200px;
+}
+
+button:focus, a:focus {
+  outline: 2px solid #00FFFF;
+  outline-offset: 2px;
+}
+
+/* Dynamische Textgrößenregelung */
+.nav {
+  font-size: 100%;
+}
+
+.nav.large-text {
+  font-size: 200%;
 }

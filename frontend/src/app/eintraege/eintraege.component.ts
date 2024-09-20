@@ -11,7 +11,7 @@ import { ContrastService } from '../shared/contrast.service';
 @Component({
   selector: 'app-eintraege',
   standalone: true,
-  imports: [MatTableModule, CommonModule, FormsModule,MatIcon],
+  imports: [MatTableModule, CommonModule, FormsModule, MatIcon],
   templateUrl: './eintraege.component.html',
   styleUrls: ['./eintraege.component.css']
 })
@@ -19,16 +19,15 @@ export class EintraegeComponent implements OnInit {
   displayedColumns: string[] = ['id', 'eintraege', 'datum', 'edit', 'delete'];
   dataSource: Eintraege[] = [];
   editingEntry: Eintraege | null = null;
-  editText: String = '';
+  editText: string = '';
+  editError: boolean = false;  // Fehlerindikator
 
   fontSize = 16;
   lineHeight = 1.5; 
   showFontSizeControl = false;
   highContrast = false;
 
-
-  constructor(private bs: BackendService, public fontSizeService: FontSizeService, public contrastService: ContrastService 
-) {} 
+  constructor(private bs: BackendService, public fontSizeService: FontSizeService, public contrastService: ContrastService) {}
 
   ngOnInit(): void {
     this.readAllEintraege();
@@ -37,12 +36,10 @@ export class EintraegeComponent implements OnInit {
       this.fontSize = size;
       this.lineHeight = size / 16;
     });
-  
+
     this.contrastService.contrast$.subscribe(isHighContrast => {
       this.highContrast = isHighContrast;
     });
-  
-
   }
 
   readAllEintraege() {
@@ -51,7 +48,6 @@ export class EintraegeComponent implements OnInit {
         this.dataSource = response; 
       },
       error: (err) => console.error('Fehler beim Abrufen der Einträge:', err),
-      complete: () => console.log('Abrufen aller Einträge abgeschlossen')
     });
   }
 
@@ -68,17 +64,19 @@ export class EintraegeComponent implements OnInit {
   
   startEdit(entry: Eintraege): void {
     this.editingEntry = entry;
-    this.editText = entry.eintraege;
+    this.editText = String(entry.eintraege);
   }
 
   updateEntry(): void {
-
-    if (this.editingEntry) {
+    if (this.editText.trim() === '') {
+      this.editError = true;  // Fehler setzen, wenn das Feld leer ist
+    } else if (this.editingEntry) {
       this.bs.updateEntry(this.editingEntry.id!, { ...this.editingEntry, eintraege: this.editText }).subscribe({
         next: () => {
           console.log(`Eintrag mit ID ${this.editingEntry!.id} wurde aktualisiert.`);
           this.editingEntry = null;
           this.editText = '';
+          this.editError = false;  // Fehler zurücksetzen
           this.readAllEintraege(); 
         },
         error: (err) => console.error('Fehler beim Aktualisieren des Eintrags:', err)
@@ -90,12 +88,8 @@ export class EintraegeComponent implements OnInit {
 
   toggleContrast(): void {
     const newContrast = !this.highContrast;
-    console.log('High Contrast aktiviert:', newContrast);
     this.highContrast = newContrast;
   }
-  
-  
-  
 
   toggleFontSizeControl(): void {
     this.showFontSizeControl = !this.showFontSizeControl;
