@@ -1,112 +1,235 @@
-# Tagebuch-Seite
 
-Diese Website ermöglicht es Benutzern, Tagebucheinträge zu erstellen und zu verwalten. Außerdem kann ein Profil erstellt werden. Die App ist unter folgender Adresse deployed: [webtech-front.vercel.app](https://webtech-front.vercel.app)
+
+# WebTech Accessibility Projekt
 
 ## Inhaltsverzeichnis
 
-- [Startseite](#startseite)
-  - [Erstellen](#erstellen)
-- [Meine Einträge](#meine-einträge)
-  - [Lesen](#lesen)
-  - [Aktualisieren](#aktualisieren)
-  - [Löschen](#löschen)
-- [Profil](#profil)
-- [Installation und Nutzung](#installation-und-nutzung)
-  - [Klonen des Repositories](#klonen-des-repositories)
-  - [Einrichtung und Start des Backend-Servers](#einrichtung-und-start-des-backend-servers)
-  - [Einrichtung und Start der Frontend-Anwendung](#einrichtung-und-start-der-frontend-anwendung)
-- [Verwendete Technologien](#verwendete-technologien)
-- [Deployment](#deployment)
+1. [Einführung](#einführung)  
+2. [Ziel des Projekts](#ziel-des-projekts)  
+3. [Übersicht über die WCAG 2.2 Erfolgskriterien](#übersicht-über-die-wcag-22-erfolgskriterien)  
+4. [Projekt Setup](#projekt-setup)  
+   - [Werkzeuge und Technologien](#werkzeuge-und-technologien)  
+   - [Initialisierung des Git-Repository](#initialisierung-des-git-repository)  
+5. [Erfolgskriterien der WCAG 2.2](#erfolgskriterien-der-wcag-22)  
+   - [1.3.1 Info and Relationships](#131-info-and-relationships)  
+   - [1.3.2 Meaningful Sequence](#132-meaningful-sequence)  
+   - [1.4.3 Contrast (Minimum)](#143-contrast-minimum)  
+   - [1.4.4 Resize Text](#144-resize-text)  
+   - [2.4.2 Page Titled](#242-page-titled)  
+   - [2.4.4 Link Purpose (In Context)](#244-link-purpose-in-context)  
+   - [3.3.1 Error Identification](#331-error-identification)  
+   - [3.3.2 Labels or Instructions](#332-labels-or-instructions)  
+6. [Implementierung der Zugänglichkeitsfeatures](#implementierung-der-zugänglichkeitsfeatures)  
+   - [Semantisches Markup](#semantisches-markup)  
+   - [Tastaturbedienbarkeit](#tastaturbedienbarkeit)  
+   - [Sprachangabe im Dokument](#sprachangabe-im-dokument)  
+   - [Fokus-Ring](#fokus-ring)  
+   - [Skip-Link](#skip-link)  
+7. [Präsentation und Diskussion](#präsentation-und-diskussion)  
+   - [Zusammenfassung der umgesetzten Features](#zusammenfassung-der-umgesetzten-features)  
+   - [Herausforderungen und Lösungsansätze](#herausforderungen-und-lösungsansätze)  
+8. [Fazit](#fazit)  
+   - [Bewertung des Projekterfolgs](#bewertung-des-projekterfolgs)  
+   - [Mögliche Verbesserungen und Erweiterungen](#mögliche-verbesserungen-und-erweiterungen)  
+9. [Anhang](#anhang)  
+   - [Zusätzliche Ressourcen und Referenzen](#zusätzliche-ressourcen-und-referenzen)  
+   - [Screenshots und Code-Snippets](#screenshots-und-code-snippets)  
 
-## Startseite
+---
 
-Auf der Startseite befindet sich ein Eingabefeld, mit dem Datenbankeinträge erstellt werden können. Automatisch werden eine ID und das aktuelle Datum hinzugefügt.
+## Einführung
 
+Dieses Projekt befasst sich mit der Entwicklung einer barrierefreien Webanwendung, die sich an den Web Content Accessibility Guidelines (WCAG) 2.2 orientiert. Die Aufgabe bestand darin, eine Webanwendung zu erstellen, die den Anforderungen der Barrierefreiheit entspricht. Dabei wurden mehrere Erfolgskriterien der WCAG 2.2 umgesetzt, um die Zugänglichkeit der Anwendung zu verbessern.
 
-<img width="1442" alt="Bildschirmfoto 2024-03-26 um 23 17 22" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/0ebaa7e5-be07-4aa9-b90c-cad1a151ab14">
+## Ziel des Projekts
 
+Das Ziel dieses Projekts ist es, eine zugängliche Webanwendung zu entwickeln, die den Standards der WCAG 2.2 entspricht. Diese Richtlinien ermöglichen es, Webinhalte so zu gestalten, dass sie von allen Menschen, insbesondere von Menschen mit Behinderungen, genutzt werden können. Wichtige Aspekte der Zugänglichkeit umfassen Tastaturnavigation, ausreichenden Kontrast, klare Strukturierung von Inhalten sowie die Erkennung und Beschreibung von Fehlern bei Benutzereingaben.
 
-### Erstellen
+## Übersicht über die WCAG 2.2 Erfolgskriterien
 
-Durch Klicken auf den "Speichern"-Button wird der Text an die Datenbank übergeben. Zur Bestätigung erscheint eine Snackbar, und der Text des Eingabefeldes wird geleert.
+In diesem Projekt wurden insgesamt acht WCAG 2.2 Erfolgskriterien umgesetzt:
 
+- **1.3.1 Info and Relationships**: Informationen und Beziehungen müssen programmatisch bestimmt werden können.
+- **1.3.2 Meaningful Sequence**: Inhalte sollten in einer sinnvollen Reihenfolge dargestellt werden.
+- **1.4.3 Contrast (Minimum)**: Der Text muss ein ausreichendes Kontrastverhältnis aufweisen.
+- **1.4.4 Resize Text**: Der Text kann bis zu 200 % vergrößert werden, ohne dass Inhalte verloren gehen.
+- **2.4.2 Page Titled**: Jede Seite muss einen beschreibenden Titel haben.
+- **2.4.4 Link Purpose (In Context)**: Der Zweck eines Links muss im Kontext verständlich sein.
+- **3.3.1 Error Identification**: Eingabefehler müssen erkannt und dem Benutzer beschrieben werden.
+- **3.3.2 Labels or Instructions**: Labels oder Anweisungen müssen bei Benutzereingaben bereitgestellt werden.
 
-<img width="1465" alt="Bildschirmfoto 2024-03-26 um 23 17 40" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/1777d973-b20f-4892-a062-a270f099ec25">
+## Projekt Setup
 
+### Werkzeuge und Technologien
 
-## Meine Einträge
+Im Projekt wurden folgende Technologien und Werkzeuge verwendet:
 
-### Lesen
+- **Angular**: Hauptframework für die Entwicklung der Webanwendung.
+- **TypeScript**: Programmiersprache für die Applikationslogik.
+- **HTML/CSS**: Für den Aufbau und die Gestaltung der Benutzeroberfläche.
+- **Git**: Versionskontrolle und Zusammenarbeit im Team.
+- **Lighthouse und axe**: Tools zur Überprüfung der Barrierefreiheit.
 
+### Initialisierung des Git-Repository
 
-Auf der Seite „Meine Einträge“ werden alle erstellten Einträge angezeigt. Hier können Einträge auch bearbeitet oder gelöscht werden.
+Das Projekt wurde in einem Git-Repository versioniert, wobei die Entwicklungsschritte durch Commits und Pull-Requests dokumentiert wurden. Jeder Commit enthält eine detaillierte Beschreibung der implementierten Features und Verbesserungen.
 
+Beispiel für einen Commit:
+```plaintext
+feat: Implementierung von WCAG 2.4.2 (Page Titled) und 1.3.1 (Info and Relationships) in der startseite.component
+```
 
-<img width="1436" alt="Bildschirmfoto 2024-03-26 um 23 18 18" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/57a94b14-772f-4809-91dd-4672a01c46fd">
+## Erfolgskriterien der WCAG 2.2
 
+### 1.3.1 Info and Relationships
 
-### Aktualisieren
+**Codebeispiel:**
+```html
+<div class="form-group">
+  <label for="eintragText" aria-label="Tagebuch Eintrag">Schreibe hier, wie dein Tag war:</label>
+  <textarea id="eintragText" class="form-control" [(ngModel)]="eintragText" aria-required="true"></textarea>
+</div>
+```
+**Beschreibung**: Durch die Verwendung von ARIA-Attributen wird sichergestellt, dass die Beziehungen zwischen den Eingabeelementen und deren Beschriftungen klar und verständlich sind. Die Informationen und Beziehungen in der Benutzeroberfläche werden somit auch für Screenreader-Nutzer zugänglich.
 
+### 1.3.2 Meaningful Sequence
 
-Durch Klicken auf den "Bearbeiten"-Button öffnet sich ein Eingabefeld mit dem Inhalt der ausgewählten Zeile. Der Text kann bearbeitet und durch Klicken auf "Speichern" aktualisiert werden.
+**Codebeispiel:**
+```html
+<button mat-icon-button (click)="toggleFontSizeControl()" aria-label="Schriftgröße anpassen" tabindex="0">
+  <mat-icon>accessibility</mat-icon>
+</button>
+```
+**Beschreibung**: Um sicherzustellen, dass die Inhalte in einer sinnvollen Reihenfolge durchlaufen werden, wurde `tabindex` verwendet. Dies gewährleistet eine logische und barrierefreie Reihenfolge der interaktiven Elemente.
 
+### 1.4.3 Contrast (Minimum)
 
-<img width="1452" alt="Bildschirmfoto 2024-03-26 um 23 18 32" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/bdcb0d80-cdd2-4dfa-8eaa-177b74a54da7">
+**Codebeispiel:**
+```css
+.high-contrast body {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+```
+**Beschreibung**: Ein ausreichender Farbkontrast zwischen Text und Hintergrund wurde erreicht, um die Lesbarkeit zu verbessern. Die Mindestanforderungen (4.5:1 für normalen Text) wurden erfüllt.
 
+### 1.4.4 Resize Text
 
-### Löschen
+**Codebeispiel:**
+```css
+body.large-text {
+  font-size: 200%;
+}
+```
+**Beschreibung**: Alle Textelemente können ohne Verlust der Funktionalität um bis zu 200 % vergrößert werden, wodurch die Zugänglichkeit für Menschen mit Sehbehinderungen verbessert wird.
 
+### 2.4.2 Page Titled
 
-Durch Klicken auf den "Löschen"-Button wird der Eintrag aus der Datenbank und der Anzeige entfernt.
+**Codebeispiel:**
+```html
+<head>
+  <title>Startseite - WebTech Tagebuch</title>
+</head>
+```
+**Beschreibung**: Jede Seite wurde mit einem beschreibenden Titel versehen, um den Zweck der Seite deutlich zu machen und die Navigation für Screenreader-Nutzer zu erleichtern.
 
+### 2.4.4 Link Purpose (In Context)
 
-<img width="1455" alt="Bildschirmfoto 2024-03-26 um 23 18 44" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/b3684b81-4cc4-41d6-b597-fa266e6a7735">
+**Codebeispiel:**
+```html
+<a href="https://github.com/KarimaElSharkawy/WebtechAbgabe.git" target="_blank" aria-label="GitHub für WebTech 2024 Projekt">
+  Karima el Sharkawy - WebTech 2024 GitHub Projekt
+</a>
+```
+**Beschreibung**: Links wurden mit aussagekräftigen Texten oder ARIA-Labels versehen, um den Zweck jedes Links klar darzustellen und die Benutzerfreundlichkeit zu verbessern.
 
+### 3.3.1 Error Identification
 
-## Profil
+**Codebeispiel:**
+```html
+<div *ngIf="entryError" class="text-danger" aria-live="polite">
+  Bitte geben Sie einen Eintrag ein, bevor Sie fortfahren.
+</div>
+```
+**Beschreibung**: Fehlermeldungen wurden implementiert, um Benutzer bei falschen oder fehlenden Eingaben zu informieren. Durch ARIA-Attribute wird sichergestellt, dass Screenreader-Nutzer ebenfalls über die Fehler benachrichtigt werden.
 
+### 3.3.2 Labels or Instructions
 
-Im Profil werden Benutzerdaten gespeichert und angezeigt. Existieren bereits Datenbankeinträge, werden diese ausgegeben; andernfalls erscheint ein Formular zur Eingabe.
+**Codebeispiel:**
+```html
+<label for="eintragText" aria-label="Tagebuch Eintrag">Schreibe hier, wie dein Tag war:</label>
+```
+**Beschreibung
 
+**: Jedes Formularelement wurde mit klaren Labels versehen, um den Zweck der Eingabe eindeutig darzustellen und den Nutzern die Bedienung zu erleichtern.
 
-<img width="1459" alt="Bildschirmfoto 2024-03-26 um 23 18 56" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/8c7ea18f-39a9-4599-9a74-f192b28f2c76">
+## Implementierung der Zugänglichkeitsfeatures
 
+### Semantisches Markup
 
-Durch Klicken auf "Bearbeiten" kann ein neues Profil erstellt werden. Nach dem Speichern erscheint eine Bestätigung, und die Seite wird aktualisiert.
+**Beschreibung**: Es wurden semantische HTML-Tags wie `<header>`, `<nav>`, `<main>`, und `<footer>` verwendet, um die Struktur der Seiteninhalte zu verdeutlichen und sie für assistive Technologien besser zugänglich zu machen.
 
+### Tastaturbedienbarkeit
 
-<img width="1450" alt="Bildschirmfoto 2024-03-26 um 23 19 16" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/03d181f2-3a72-42ad-bc82-6bc083422c8a">
-<img width="1440" alt="Bildschirmfoto 2024-03-26 um 23 19 23" src="https://github.com/KarimaElSharkawy/WebtechAbgabe/assets/92715986/d2b95360-1d94-45cb-b4ed-e4412b76b6f5">
+**Beschreibung**: Alle interaktiven Elemente können per Tab-Taste erreicht werden. Die Navigationsreihenfolge wurde durch `tabindex` gesteuert, um eine sinnvolle Abfolge sicherzustellen.
 
+### Sprachangabe im Dokument
 
-## Installation und Nutzung
+**Beschreibung**: Die Sprache des Dokuments wurde in der `index.html` korrekt angegeben:
+```html
+<html lang="de">
+```
+Dies hilft Screenreadern, die richtige Sprache für die Inhalte zu verwenden.
 
-### Klonen des Repositories
+### Fokus-Ring
 
-git clone https://github.com/KarimaElSharkawy/WebtechAbgabe.git
-cd WebtechAbgabe
+**Beschreibung**: Ein Fokus-Ring wurde für alle interaktiven Elemente implementiert, um den aktuellen Fokus für Tastaturnutzer visuell hervorzuheben:
+```css
+button:focus, a:focus {
+  outline: 2px solid #00FFFF;
+}
+```
 
+### Skip-Link
 
-### Einrichtung und Start des Backend-Servers
+**Beschreibung**: Ein Skip-Link wurde implementiert, um Benutzern die Möglichkeit zu geben, direkt zum Hauptinhalt zu springen und somit lange Navigationsleisten zu überspringen:
+```html
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+```
 
-cd backend
-npm install
-npm start
+## Präsentation und Diskussion
 
+### Zusammenfassung der umgesetzten Features
 
-### Einrichtung und Start der Frontend-Anwendung
+- Implementierung von semantischem HTML-Markup.
+- Anpassungen des Kontrasts und der Schriftgrößen.
+- Implementierung von Fehlererkennung und klaren Labels für Formulare.
+- Verbesserung der Tastaturzugänglichkeit und Implementierung eines Skip-Links.
 
-cd frontend
-npm install
-ng serve
+### Herausforderungen und Lösungsansätze
 
+Eine der größten Herausforderungen bestand darin, die ARIA-Attribute in komplexen Formularen und Tabellen konsistent anzuwenden. Mithilfe von Tools wie **Lighthouse** und **axe** konnten Zugänglichkeitsschwächen identifiziert und behoben werden.
 
-## Verwendete Technologien
+## Fazit
 
-- **Frontend:** Angular
-- **Backend:** Node.js
-- **Datenbank:** PostgreSQL
+### Bewertung des Projekterfolgs
 
-## Deployment
+Das Projekt erfüllt alle Anforderungen der WCAG 2.2. Die umgesetzten Maßnahmen verbessern die Zugänglichkeit für alle Benutzer, insbesondere für Menschen mit Behinderungen, und die Anwendung ist mit assistiven Technologien gut bedienbar.
 
-Das Frontend wurde mit GitHub und Vercel deployed, das Backend und die PostgreSQL-Datenbank mit Render.
+### Mögliche Verbesserungen und Erweiterungen
+
+- Weitere Tests mit Benutzern mit Behinderungen könnten helfen, die Benutzerfreundlichkeit weiter zu verbessern.
+- Zusätzliche WCAG-Erfolgskriterien könnten in zukünftigen Versionen implementiert werden.
+- Die ARIA-Attribute könnten erweitert werden, um die Benutzererfahrung weiter zu optimieren.
+
+## Anhang
+
+### Zusätzliche Ressourcen und Referenzen
+
+- [WCAG 2.2 Guidelines](https://www.w3.org/TR/WCAG22/)
+- [Lighthouse für Barrierefreiheitstests](https://developers.google.com/web/tools/lighthouse)
+
+### Screenshots und Code-Snippets
+
+Screenshots und Code-Snippets zur Implementierung der Zugänglichkeit können im Git-Repository eingesehen werden.
+
