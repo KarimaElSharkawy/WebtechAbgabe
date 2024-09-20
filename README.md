@@ -9,7 +9,6 @@
 3. [Übersicht über die WCAG 2.2 Erfolgskriterien](#übersicht-über-die-wcag-22-erfolgskriterien)  
 4. [Projekt Setup](#projekt-setup)  
    - [Werkzeuge und Technologien](#werkzeuge-und-technologien)  
-   - [Initialisierung des Git-Repository](#initialisierung-des-git-repository)  
 5. [Erfolgskriterien der WCAG 2.2](#erfolgskriterien-der-wcag-22)  
    - [1.3.1 Info and Relationships](#131-info-and-relationships)  
    - [1.3.2 Meaningful Sequence](#132-meaningful-sequence)  
@@ -33,7 +32,6 @@
    - [Mögliche Verbesserungen und Erweiterungen](#mögliche-verbesserungen-und-erweiterungen)  
 9. [Anhang](#anhang)  
    - [Zusätzliche Ressourcen und Referenzen](#zusätzliche-ressourcen-und-referenzen)  
-   - [Screenshots und Code-Snippets](#screenshots-und-code-snippets)  
 
 ---
 
@@ -69,15 +67,6 @@ Im Projekt wurden folgende Technologien und Werkzeuge verwendet:
 - **HTML/CSS**: Für den Aufbau und die Gestaltung der Benutzeroberfläche.
 - **Git**: Versionskontrolle und Zusammenarbeit im Team.
 - **Lighthouse und axe**: Tools zur Überprüfung der Barrierefreiheit.
-
-### Initialisierung des Git-Repository
-
-Das Projekt wurde in einem Git-Repository versioniert, wobei die Entwicklungsschritte durch Commits und Pull-Requests dokumentiert wurden. Jeder Commit enthält eine detaillierte Beschreibung der implementierten Features und Verbesserungen.
-
-Beispiel für einen Commit:
-```plaintext
-feat: Implementierung von WCAG 2.4.2 (Page Titled) und 1.3.1 (Info and Relationships) in der startseite.component
-```
 
 ## Erfolgskriterien der WCAG 2.2
 
@@ -159,9 +148,7 @@ body.large-text {
 ```html
 <label for="eintragText" aria-label="Tagebuch Eintrag">Schreibe hier, wie dein Tag war:</label>
 ```
-**Beschreibung
-
-**: Jedes Formularelement wurde mit klaren Labels versehen, um den Zweck der Eingabe eindeutig darzustellen und den Nutzern die Bedienung zu erleichtern.
+**Beschreibung**: Jedes Formularelement wurde mit klaren Labels versehen, um den Zweck der Eingabe eindeutig darzustellen und den Nutzern die Bedienung zu erleichtern.
 
 ## Implementierung der Zugänglichkeitsfeatures
 
@@ -229,7 +216,5 @@ Das Projekt erfüllt alle Anforderungen der WCAG 2.2. Die umgesetzten Maßnahmen
 - [WCAG 2.2 Guidelines](https://www.w3.org/TR/WCAG22/)
 - [Lighthouse für Barrierefreiheitstests](https://developers.google.com/web/tools/lighthouse)
 
-### Screenshots und Code-Snippets
 
-Screenshots und Code-Snippets zur Implementierung der Zugänglichkeit können im Git-Repository eingesehen werden.
 
