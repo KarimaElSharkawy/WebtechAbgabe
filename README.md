@@ -1,6 +1,7 @@
 
 
 # WebTech Accessibility Projekt
+- [Präsentation](https://www.canva.com/design/DAGR43L4WDw/vrmBFUj6QIG57MiSxiN9_w/edit?utm_content=DAGR43L4WDw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - [Dokumentation](https://docs.google.com/document/d/1w_7wqp_GJv40DShD1_Dy1ZtnE2pDHwQFnOTslEk6Rmw/edit?usp=sharing)
 
 ## Inhaltsverzeichnis
@@ -66,7 +67,7 @@ Im Projekt wurden folgende Technologien und Werkzeuge verwendet:
 - **Angular**: Hauptframework für die Entwicklung der Webanwendung.
 - **TypeScript**: Programmiersprache für die Applikationslogik.
 - **HTML/CSS**: Für den Aufbau und die Gestaltung der Benutzeroberfläche.
-- **Git**: Versionskontrolle und Zusammenarbeit im Team.
+- **Git**: Versionskontrolle.
 - **Lighthouse und axe**: Tools zur Überprüfung der Barrierefreiheit.
 
 ## Erfolgskriterien der WCAG 2.2

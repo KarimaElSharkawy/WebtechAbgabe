@@ -14,11 +14,13 @@
       <textarea id="eintragText" class="form-control" style="height: 200px;" [(ngModel)]="eintragText" [ngStyle]="{'font-size.px': fontSize}" aria-required="true"></textarea>
 
       <div *ngIf="entryError" class="text-danger" aria-live="polite">
-        Bitte geben Sie einen Eintrag ein, bevor Sie fortfahren.
+        Bitte geben Sie einen Eintrag ein, bevor Sie fortfahren. Sie müssen das Feld ausfüllen, um Ihren Eintrag zu speichern.
       </div>
     </div>
 
-    <button type="button" class="btn btn-primary" (click)="addEntry()" [ngStyle]="{'font-size.px': fontSize, 'padding.px': fontSize * 0.5}" aria-label="Eintragen deines Tages">Eintragen</button>
+    <button type="button" class="btn btn-primary" (click)="addEntry()" [ngStyle]="{'font-size.px': fontSize, 'padding.px': fontSize * 0.5}" aria-label="Eintrag hinzufügen">
+      Eintragen
+    </button>
   </div>
 </div>
 <div class="abstand"></div>

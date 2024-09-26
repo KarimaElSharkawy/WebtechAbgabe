@@ -1,4 +1,4 @@
-<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<a href="#main-content" class="skip-link" aria-label="Zum Hauptinhalt springen">Zum Inhalt springen</a>
 
 <header>
   <app-nav></app-nav>
@@ -20,7 +20,7 @@
     aria-label="Schriftgröße anpassen, um die Lesbarkeit zu verbessern" 
     class="ml-3 rounded-icon" 
     tabindex="0">
-    <mat-icon>accessibility</mat-icon>
+    <mat-icon aria-hidden="true">accessibility</mat-icon>
   </button>
 
   <div *ngIf="showFontSizeControl" class="form-group ml-3">
@@ -28,7 +28,7 @@
     <input type="range" id="fontSizeRange" min="12" max="22.4" 
       (input)="changeFontSize($event)" 
       [value]="fontSizeService.getFontSize()" 
-      aria-label="Schieberegler für die Schriftgröße">
+      aria-label="Schieberegler für Schriftgröße">
   </div>
 
   <div *ngIf="showFontSizeControl" class="form-group ml-3">
