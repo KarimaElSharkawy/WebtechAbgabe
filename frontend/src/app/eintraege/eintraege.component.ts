@@ -5,11 +5,13 @@ import { Eintraege } from '../shared/eintraege';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
+import { FontSizeService } from '../shared/font-size.service';
+import { ContrastService } from '../shared/contrast.service';
 
 @Component({
   selector: 'app-eintraege',
   standalone: true,
-  imports: [MatTableModule, CommonModule, FormsModule,MatIcon],
+  imports: [MatTableModule, CommonModule, FormsModule, MatIcon],
   templateUrl: './eintraege.component.html',
   styleUrls: ['./eintraege.component.css']
 })
@@ -17,12 +19,27 @@ export class EintraegeComponent implements OnInit {
   displayedColumns: string[] = ['id', 'eintraege', 'datum', 'edit', 'delete'];
   dataSource: Eintraege[] = [];
   editingEntry: Eintraege | null = null;
-  editText: String = '';
+  editText: string = '';
+  editError: boolean = false;  
 
-  constructor(private bs: BackendService) {} 
+  fontSize = 16;
+  lineHeight = 1.5; 
+  showFontSizeControl = false;
+  highContrast = false;
+
+  constructor(private bs: BackendService, public fontSizeService: FontSizeService, public contrastService: ContrastService) {}
 
   ngOnInit(): void {
     this.readAllEintraege();
+
+    this.fontSizeService.fontSize$.subscribe(size => {
+      this.fontSize = size;
+      this.lineHeight = size / 16;
+    });
+
+    this.contrastService.contrast$.subscribe(isHighContrast => {
+      this.highContrast = isHighContrast;
+    });
   }
 
   readAllEintraege() {
@@ -31,8 +48,14 @@ export class EintraegeComponent implements OnInit {
         this.dataSource = response; 
       },
       error: (err) => console.error('Fehler beim Abrufen der Einträge:', err),
-      complete: () => console.log('Abrufen aller Einträge abgeschlossen')
     });
+  }
+
+  confirmDelete(id: number) {
+    const confirmResult = window.confirm('Möchten Sie diesen Eintrag wirklich löschen?');
+    if (confirmResult) {
+      this.deleteEntry(id);
+    }
   }
 
   deleteEntry(id: number) {
@@ -48,17 +71,19 @@ export class EintraegeComponent implements OnInit {
   
   startEdit(entry: Eintraege): void {
     this.editingEntry = entry;
-    this.editText = entry.eintraege;
+    this.editText = String(entry.eintraege);
   }
 
   updateEntry(): void {
-
-    if (this.editingEntry) {
+    if (this.editText.trim() === '') {
+      this.editError = true;  
+    } else if (this.editingEntry) {
       this.bs.updateEntry(this.editingEntry.id!, { ...this.editingEntry, eintraege: this.editText }).subscribe({
         next: () => {
           console.log(`Eintrag mit ID ${this.editingEntry!.id} wurde aktualisiert.`);
           this.editingEntry = null;
           this.editText = '';
+          this.editError = false;  
           this.readAllEintraege(); 
         },
         error: (err) => console.error('Fehler beim Aktualisieren des Eintrags:', err)
@@ -67,5 +92,18 @@ export class EintraegeComponent implements OnInit {
       console.error('EditingEntry ist null.');
     }
   }
-  
+
+  toggleContrast(): void {
+    const newContrast = !this.highContrast;
+    this.highContrast = newContrast;
+  }
+
+  toggleFontSizeControl(): void {
+    this.showFontSizeControl = !this.showFontSizeControl;
+  }
+
+  changeFontSize(event: any): void {
+    const newSize = event.target.value;
+    this.fontSizeService.setFontSize(newSize);
+  }
 }

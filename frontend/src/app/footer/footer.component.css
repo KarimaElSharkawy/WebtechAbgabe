@@ -1,12 +1,41 @@
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    color: #767676;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #f8f9fa;
-    text-decoration: none; 
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #111111; 
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer a {
+  color: #0056b3; 
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #003366; 
+}
+
+.high-contrast .footer {
+  background-color: #000000 !important; 
+  color: #FFFF00 !important; 
+}
+
+.high-contrast .footer a {
+  color: #FFFF00 !important; 
+}
+
+.high-contrast .footer a:hover {
+  color: #FFFFFF !important; 
+}
+
+.footer {
+  font-size: 100%; 
+}
+
+.footer.large-text {
+  font-size: 200%; 
+}

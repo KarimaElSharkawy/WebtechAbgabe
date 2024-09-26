@@ -1,0 +1,94 @@
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: #ffffff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+button.rounded-icon {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  cursor: pointer;
+  outline: none;
+}
+
+button.rounded-icon:hover {
+  background-color: #003366;
+}
+
+button.rounded-icon:focus {
+  outline: 2px solid #00FFFF;
+}
+
+.accessibility-controls {
+  position: fixed;
+  bottom: 100px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.accessibility-controls .form-group {
+  margin-left: 15px;
+}
+
+.label-large {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input[type="range"] {
+  width: 150px;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #333333;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 500;
+}
+
+.high-contrast .footer {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+.high-contrast .footer a {
+  color: #FFFF00 !important;
+}
+
+.high-contrast .footer a:hover {
+  color: #FFFFFF !important;
+}
+
+main {
+  padding-bottom: 120px;
+}

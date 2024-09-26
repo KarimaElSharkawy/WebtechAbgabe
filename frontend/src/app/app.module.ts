@@ -13,6 +13,11 @@ import { AppComponent } from './app.component';
 import { BackendService } from './shared/backend.service';
 import { AppRoutingModule } from './app.routes';
 import { ProfielComponent } from './profiel/profiel.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContrastService } from './shared/contrast.service'; // Füge den ContrastService hinzu
+import { FontSizeService } from './shared/font-size.service';
+
+
 
 
 
@@ -24,6 +29,7 @@ import { ProfielComponent } from './profiel/profiel.component';
     StartseiteComponent,
     ProfielComponent,
     EintraegeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,8 @@ import { ProfielComponent } from './profiel/profiel.component';
     BrowserAnimationsModule
 
 ],
-  providers: [],
+providers: [FontSizeService, ContrastService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
