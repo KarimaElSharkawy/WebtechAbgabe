@@ -9,7 +9,9 @@ export class FontSizeService {
   fontSize$ = this.fontSizeSubject.asObservable();
 
   setFontSize(size: number) {
-    this.fontSizeSubject.next(size);
+    const maxSize = 16 * 2; // 140% der Standardgröße
+    const newSize = size > maxSize ? maxSize : size;
+    this.fontSizeSubject.next(newSize);
   }
 
   getFontSize(): number {

@@ -33,7 +33,7 @@ import { ContrastService } from '../shared/contrast.service';
   ]
 })
 export class NavComponent implements OnInit {
-  fontSize = 16; // Standard-Schriftgröße
+  fontSize = 16; 
   highContrast = false;
 
   private breakpointObserver = inject(BreakpointObserver);

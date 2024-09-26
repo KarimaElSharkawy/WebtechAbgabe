@@ -9,12 +9,10 @@
       <p class="lead mb-0" [ngStyle]="{'font-size.px': fontSize}"></p>
     </div>
 
-    <!-- Eingabefeld mit Label und Fehlerbehandlung -->
     <div class="form-group">
       <label for="eintragText" aria-label="Tagebuch Eintrag">Schreibe hier, wie dein Tag war:</label>
       <textarea id="eintragText" class="form-control" style="height: 200px;" [(ngModel)]="eintragText" [ngStyle]="{'font-size.px': fontSize}" aria-required="true"></textarea>
 
-      <!-- Fehlerhinweis bei leerem Eingabefeld -->
       <div *ngIf="entryError" class="text-danger" aria-live="polite">
         Bitte geben Sie einen Eintrag ein, bevor Sie fortfahren.
       </div>

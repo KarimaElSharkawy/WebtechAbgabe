@@ -2,8 +2,8 @@
   position: absolute;
   top: -40px;
   left: 0;
-  background: #000;
-  color: #fff;
+  background: #000000; 
+  color: #ffffff;
   padding: 8px;
   z-index: 100;
   transition: top 0.3s;
@@ -21,17 +21,17 @@ button:focus, a:focus {
 .container {
   max-width: 90%;
   background-color: #f8f9fa;
-  color: #343a40;
+  color: #333333; 
 }
 
 .jumbotron {
   background-color: #343a40;
-  color: white; /* Sicherstellen des Kontrasts */
+  color: white; 
 }
 
 .high-contrast .container {
-  background-color: #000000 !important;
-  color: #FFFF00 !important;
+  background-color: #000000 !important; 
+  color: #FFFF00 !important; 
 }
 
 .high-contrast .jumbotron {
@@ -55,11 +55,58 @@ button:focus, a:focus {
   color: #FFFF00 !important;
 }
 
-/* Dynamische Textgrößenregelung */
 .container {
   font-size: 100%;
 }
 
 .container.large-text {
   font-size: 200%;
+}
+
+button.btn-primary {
+  background-color: #003366;
+  color: #ffffff; 
+  border-color: #003366;
+}
+
+button.btn-primary:hover {
+  background-color: #002244; 
+  color: #ffffff;
+  border-color: #002244;
+}
+
+a {
+  color: #0056b3; 
+}
+
+a:hover {
+  color: #003366; 
+}
+
+.footer {
+  background-color: #f8f9fa; 
+  color: #333333; 
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer a {
+  color: #0056b3; 
+}
+
+.footer a:hover {
+  color: #003366; 
+}
+
+.high-contrast .footer {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+.high-contrast .footer a {
+  color: #FFFF00 !important;
+}
+
+.high-contrast .footer a:hover {
+  color: #FFFFFF !important;
 }

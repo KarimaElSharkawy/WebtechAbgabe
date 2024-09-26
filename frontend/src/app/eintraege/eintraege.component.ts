@@ -20,7 +20,7 @@ export class EintraegeComponent implements OnInit {
   dataSource: Eintraege[] = [];
   editingEntry: Eintraege | null = null;
   editText: string = '';
-  editError: boolean = false;  // Fehlerindikator
+  editError: boolean = false;  
 
   fontSize = 16;
   lineHeight = 1.5; 
@@ -51,6 +51,13 @@ export class EintraegeComponent implements OnInit {
     });
   }
 
+  confirmDelete(id: number) {
+    const confirmResult = window.confirm('Möchten Sie diesen Eintrag wirklich löschen?');
+    if (confirmResult) {
+      this.deleteEntry(id);
+    }
+  }
+
   deleteEntry(id: number) {
     this.bs.deleteEntry(id).subscribe({
       next: () => {
@@ -69,14 +76,14 @@ export class EintraegeComponent implements OnInit {
 
   updateEntry(): void {
     if (this.editText.trim() === '') {
-      this.editError = true;  // Fehler setzen, wenn das Feld leer ist
+      this.editError = true;  
     } else if (this.editingEntry) {
       this.bs.updateEntry(this.editingEntry.id!, { ...this.editingEntry, eintraege: this.editText }).subscribe({
         next: () => {
           console.log(`Eintrag mit ID ${this.editingEntry!.id} wurde aktualisiert.`);
           this.editingEntry = null;
           this.editText = '';
-          this.editError = false;  // Fehler zurücksetzen
+          this.editError = false;  
           this.readAllEintraege(); 
         },
         error: (err) => console.error('Fehler beim Aktualisieren des Eintrags:', err)

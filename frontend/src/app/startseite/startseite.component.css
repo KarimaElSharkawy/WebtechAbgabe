@@ -1,38 +1,113 @@
-.jumbotron {
-  background-color: #000000;
-  color: #FFFFFF; /* Kontrast 21:1 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000; 
+  color: #ffffff; 
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
 }
 
-.high-contrast .bg-dark {
-  background-color: #000000 !important;
-  color: #FFFF00 !important;
+.skip-link:focus {
+  top: 0;
 }
 
-.high-contrast .bg-light {
-  background-color: #000000 !important;
-  color: #FFFF00 !important;
-}
-
-.high-contrast a {
-  color: #00FFFF !important;
-}
-
-.high-contrast button.btn-primary {
-  background-color: #FFFF00 !important;
-  color: #000000 !important;
-  border-color: #FFFF00 !important;
-}
 
 button:focus, a:focus {
   outline: 2px solid #00FFFF;
   outline-offset: 2px;
 }
 
-/* Dynamische Textgrößenregelung */
+.container {
+  max-width: 90%;
+  background-color: #f8f9fa;
+  color: #333333; 
+}
+
 .jumbotron {
+  background-color: #343a40; 
+  color: white; 
+}
+
+.high-contrast .container {
+  background-color: #000000 !important; 
+  color: #FFFF00 !important; 
+}
+
+.high-contrast .jumbotron {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+.high-contrast th {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border-bottom: 1px solid #FFFF00 !important;
+}
+
+.high-contrast td {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border-bottom: 1px solid #FFFF00 !important;
+}
+
+.high-contrast mat-icon {
+  color: #FFFF00 !important;
+}
+
+.container {
   font-size: 100%;
 }
 
-.jumbotron.large-text {
+.container.large-text {
   font-size: 200%;
+}
+
+button.btn-primary {
+  background-color: #003366; 
+  color: #ffffff; 
+  border-color: #003366;
+}
+
+button.btn-primary:hover {
+  background-color: #002244; 
+  color: #ffffff;
+  border-color: #002244;
+}
+
+a {
+  color: #0056b3; 
+}
+
+a:hover {
+  color: #003366; 
+}
+
+.footer {
+  background-color: #f8f9fa; 
+  color: #333333; 
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer a {
+  color: #0056b3; 
+}
+
+.footer a:hover {
+  color: #003366; 
+}
+
+.high-contrast .footer {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+.high-contrast .footer a {
+  color: #FFFF00 !important;
+}
+
+.high-contrast .footer a:hover {
+  color: #FFFFFF !important;
 }

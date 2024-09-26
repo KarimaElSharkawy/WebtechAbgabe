@@ -6,22 +6,6 @@
 
 <main id="main-content" class="contrast-container" [ngClass]="{'high-contrast': highContrast}">
   <div class="container">
-    <div class="d-flex align-items-center">
-      <button mat-icon-button (click)="toggleFontSizeControl()" aria-label="Schriftgröße anpassen, um die Lesbarkeit zu verbessern" class="ml-3 rounded-icon" tabindex="0">
-        <mat-icon>accessibility</mat-icon>
-      </button>
-    </div>
-
-    <div *ngIf="showFontSizeControl" class="form-group mt-3">
-      <label for="fontSizeRange">Schriftgröße anpassen:</label>
-      <input type="range" id="fontSizeRange" min="12" max="40" (input)="changeFontSize($event)" [value]="fontSizeService.getFontSize()" aria-label="Schieberegler für die Schriftgröße">
-    </div>
-
-    <div *ngIf="showFontSizeControl" class="form-group mt-3">
-      <label for="contrastToggle">Hohen Kontrast aktivieren:</label>
-      <input type="checkbox" id="contrastToggle" (change)="toggleContrast()" [checked]="highContrast" aria-label="Schalter für hohen Kontrast">
-    </div>
-
     <router-outlet></router-outlet>
   </div>
 </main>
@@ -29,3 +13,29 @@
 <footer>
   <app-footer></app-footer>
 </footer>
+
+<div class="accessibility-controls">
+  <button mat-icon-button 
+    (click)="toggleFontSizeControl()" 
+    aria-label="Schriftgröße anpassen, um die Lesbarkeit zu verbessern" 
+    class="ml-3 rounded-icon" 
+    tabindex="0">
+    <mat-icon>accessibility</mat-icon>
+  </button>
+
+  <div *ngIf="showFontSizeControl" class="form-group ml-3">
+    <label for="fontSizeRange" class="label-large">Schriftgröße anpassen:</label>
+    <input type="range" id="fontSizeRange" min="12" max="22.4" 
+      (input)="changeFontSize($event)" 
+      [value]="fontSizeService.getFontSize()" 
+      aria-label="Schieberegler für die Schriftgröße">
+  </div>
+
+  <div *ngIf="showFontSizeControl" class="form-group ml-3">
+    <label for="contrastToggle" class="label-large">Hohen Kontrast aktivieren:</label>
+    <input type="checkbox" id="contrastToggle" 
+      (change)="toggleContrast()" 
+      [checked]="highContrast" 
+      aria-label="Schalter für hohen Kontrast">
+  </div>
+</div>

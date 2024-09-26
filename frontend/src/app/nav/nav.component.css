@@ -16,7 +16,7 @@
 }
 
 .high-contrast .nav a {
-  color: #FFFF00 !important; /* Sicherstellen des Kontrasts */
+  color: #FFFF00 !important; 
 }
 
 .high-contrast .nav a.router-link-active {
@@ -46,7 +46,6 @@ button:focus, a:focus {
   outline-offset: 2px;
 }
 
-/* Dynamische Textgrößenregelung */
 .nav {
   font-size: 100%;
 }

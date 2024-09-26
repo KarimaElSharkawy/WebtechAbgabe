@@ -41,7 +41,7 @@ export class StartseiteComponent {
   fontSize = 16;
   lineHeight = 1.5; 
   highContrast = false;
-  entryError: boolean = false;  // Fehlerindikator
+  entryError: boolean = false;  
 
   constructor(private backendService: BackendService, private snackBar: MatSnackBar, public fontSizeService: FontSizeService, public contrastService: ContrastService) {}
 
@@ -55,12 +55,12 @@ export class StartseiteComponent {
             duration: 3000,
           });
           this.eintragText = ''; 
-          this.entryError = false;  // Fehler zurücksetzen
+          this.entryError = false;  
         },
         error: (err) => console.error('Fehler beim Hinzufügen des Eintrags:', err),
       });
     } else {
-      this.entryError = true;  // Fehler setzen, wenn Eingabe leer ist
+      this.entryError = true;  
       console.log('Eintrag ist leer. Nichts zu speichern.');
     }
   }

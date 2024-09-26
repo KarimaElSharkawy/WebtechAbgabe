@@ -4,26 +4,38 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: #767676; /* Nicht ausreichend, daher anpassen */
+  color: #111111; 
   background-color: #f8f9fa;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.high-contrast {
-  background-color: #000000 !important;
-  color: #FFFF00 !important; /* Kontrast sicherstellen */
+.footer a {
+  color: #0056b3; 
+  text-decoration: none;
 }
 
-.high-contrast a {
-  color: #FFFF00 !important;
+.footer a:hover {
+  color: #003366; 
 }
 
-/* Dynamische Textgrößenregelung */
+.high-contrast .footer {
+  background-color: #000000 !important; 
+  color: #FFFF00 !important; 
+}
+
+.high-contrast .footer a {
+  color: #FFFF00 !important; 
+}
+
+.high-contrast .footer a:hover {
+  color: #FFFFFF !important; 
+}
+
 .footer {
-  font-size: 100%;
+  font-size: 100%; 
 }
 
 .footer.large-text {
-  font-size: 200%;
+  font-size: 200%; 
 }
