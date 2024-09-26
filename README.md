@@ -1,6 +1,7 @@
 
 
 # WebTech Accessibility Projekt
+- [Dokumentation](https://docs.google.com/document/d/1w_7wqp_GJv40DShD1_Dy1ZtnE2pDHwQFnOTslEk6Rmw/edit?usp=sharing)
 
 ## Inhaltsverzeichnis
 
@@ -9,7 +10,6 @@
 3. [Übersicht über die WCAG 2.2 Erfolgskriterien](#übersicht-über-die-wcag-22-erfolgskriterien)  
 4. [Projekt Setup](#projekt-setup)  
    - [Werkzeuge und Technologien](#werkzeuge-und-technologien)  
-   - [Initialisierung des Git-Repository](#initialisierung-des-git-repository)  
 5. [Erfolgskriterien der WCAG 2.2](#erfolgskriterien-der-wcag-22)  
    - [1.3.1 Info and Relationships](#131-info-and-relationships)  
    - [1.3.2 Meaningful Sequence](#132-meaningful-sequence)  
@@ -33,7 +33,6 @@
    - [Mögliche Verbesserungen und Erweiterungen](#mögliche-verbesserungen-und-erweiterungen)  
 9. [Anhang](#anhang)  
    - [Zusätzliche Ressourcen und Referenzen](#zusätzliche-ressourcen-und-referenzen)  
-   - [Screenshots und Code-Snippets](#screenshots-und-code-snippets)  
 
 ---
 
@@ -70,15 +69,6 @@ Im Projekt wurden folgende Technologien und Werkzeuge verwendet:
 - **Git**: Versionskontrolle und Zusammenarbeit im Team.
 - **Lighthouse und axe**: Tools zur Überprüfung der Barrierefreiheit.
 
-### Initialisierung des Git-Repository
-
-Das Projekt wurde in einem Git-Repository versioniert, wobei die Entwicklungsschritte durch Commits und Pull-Requests dokumentiert wurden. Jeder Commit enthält eine detaillierte Beschreibung der implementierten Features und Verbesserungen.
-
-Beispiel für einen Commit:
-```plaintext
-feat: Implementierung von WCAG 2.4.2 (Page Titled) und 1.3.1 (Info and Relationships) in der startseite.component
-```
-
 ## Erfolgskriterien der WCAG 2.2
 
 ### 1.3.1 Info and Relationships
@@ -101,6 +91,7 @@ feat: Implementierung von WCAG 2.4.2 (Page Titled) und 1.3.1 (Info and Relations
 </button>
 ```
 **Beschreibung**: Um sicherzustellen, dass die Inhalte in einer sinnvollen Reihenfolge durchlaufen werden, wurde `tabindex` verwendet. Dies gewährleistet eine logische und barrierefreie Reihenfolge der interaktiven Elemente.
+
 
 ### 1.4.3 Contrast (Minimum)
 
@@ -159,19 +150,24 @@ body.large-text {
 ```html
 <label for="eintragText" aria-label="Tagebuch Eintrag">Schreibe hier, wie dein Tag war:</label>
 ```
-**Beschreibung
-
-**: Jedes Formularelement wurde mit klaren Labels versehen, um den Zweck der Eingabe eindeutig darzustellen und den Nutzern die Bedienung zu erleichtern.
+**Beschreibung**: Jedes Formularelement wurde mit klaren Labels versehen, um den Zweck der Eingabe eindeutig darzustellen und den Nutzern die Bedienung zu erleichtern.
 
 ## Implementierung der Zugänglichkeitsfeatures
+
 
 ### Semantisches Markup
 
 **Beschreibung**: Es wurden semantische HTML-Tags wie `<header>`, `<nav>`, `<main>`, und `<footer>` verwendet, um die Struktur der Seiteninhalte zu verdeutlichen und sie für assistive Technologien besser zugänglich zu machen.
 
+![Bildschirmfoto 2024-09-20 um 00 02 35](https://github.com/user-attachments/assets/db0ed3ad-57a5-408d-878c-fb59c994af4e)
+
+
 ### Tastaturbedienbarkeit
 
 **Beschreibung**: Alle interaktiven Elemente können per Tab-Taste erreicht werden. Die Navigationsreihenfolge wurde durch `tabindex` gesteuert, um eine sinnvolle Abfolge sicherzustellen.
+
+![Bildschirmfoto 2024-09-20 um 00 11 31](https://github.com/user-attachments/assets/0b2a1026-0e3d-4b5b-89c7-7156c606e3d1)
+
 
 ### Sprachangabe im Dokument
 
@@ -181,6 +177,9 @@ body.large-text {
 ```
 Dies hilft Screenreadern, die richtige Sprache für die Inhalte zu verwenden.
 
+![Bildschirmfoto 2024-09-20 um 00 00 02](https://github.com/user-attachments/assets/9676df4d-1f0e-4c72-8251-be063b71dcfc)
+
+
 ### Fokus-Ring
 
 **Beschreibung**: Ein Fokus-Ring wurde für alle interaktiven Elemente implementiert, um den aktuellen Fokus für Tastaturnutzer visuell hervorzuheben:
@@ -189,6 +188,9 @@ button:focus, a:focus {
   outline: 2px solid #00FFFF;
 }
 ```
+![Bildschirmfoto 2024-09-20 um 00 04 33](https://github.com/user-attachments/assets/b57025bf-d67e-4ec2-a36a-068aedf7cf4a)
+![Bildschirmfoto 2024-09-20 um 00 04 57](https://github.com/user-attachments/assets/99fe7462-a002-419c-9687-a2577841a394)
+
 
 ### Skip-Link
 
@@ -196,6 +198,8 @@ button:focus, a:focus {
 ```html
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 ```
+![Bildschirmfoto 2024-09-20 um 00 08 07](https://github.com/user-attachments/assets/b7cd0749-afb0-4472-8348-410bc743e7b6)
+
 
 ## Präsentation und Diskussion
 
@@ -229,7 +233,5 @@ Das Projekt erfüllt alle Anforderungen der WCAG 2.2. Die umgesetzten Maßnahmen
 - [WCAG 2.2 Guidelines](https://www.w3.org/TR/WCAG22/)
 - [Lighthouse für Barrierefreiheitstests](https://developers.google.com/web/tools/lighthouse)
 
-### Screenshots und Code-Snippets
 
-Screenshots und Code-Snippets zur Implementierung der Zugänglichkeit können im Git-Repository eingesehen werden.
 
